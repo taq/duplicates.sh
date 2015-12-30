@@ -43,7 +43,7 @@ function proc() {
       echo "------------------------------------\n" >> $FOUND
       echo $RST >> $FOUND
    done
-   echo -e "\nfinished to find filenames."
+   echo "finished to find filenames."
 }
 
 #
@@ -51,11 +51,11 @@ function proc() {
 #
 function analyse() {
    if [ -s $FOUND ]; then
-      echo "encontrados:"
+      echo "duplicates found:"
       cat $FOUND
       echo "results in $FOUND."
    else
-      echo "no duplicated files found."
+      echo "no duplicates found."
    fi
 }
 
