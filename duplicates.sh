@@ -73,6 +73,18 @@ function header() {
 }
 
 #
+# Clean temp files
+#
+function cleanup() {
+   echo "cleaning temp files ..."
+   [ -f $INDEX ] && rm $INDEX
+   [ -f $DUPS  ] && rm $DUPS
+   [ -f $MD5S  ] && rm $MD5S
+   [ -f $FOUND ] && rm $FOUND
+   echo "done."
+}
+
+#
 # Run program
 #
 function main() {
@@ -81,5 +93,6 @@ function main() {
    dups
    proc
    analyse
+   cleanup
 }
 main "$@"
